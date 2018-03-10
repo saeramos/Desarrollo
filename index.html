@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	
+	<title>Formulario - JS </title>
+</head>
+<body>
+	<div class="container">
+		<div class="form_top">
+			<h2>&#128664;  Registro <span>Vehiculo</span>&#128663; </h2>
+		</div>
+		<form class="form_reg" id="formulario" action="#" onsubmit="return validacion(this);">
+
+             <input class="input" type="text" id="placa" placeholder="Placa">
+             <input class="input" type="text" id="color" placeholder="Color">
+             <input class="input" type="text" id="ano" placeholder="&#x1F4C6; Año del modelo" >
+             <input class="input" type="text" id="capacidad" placeholder="&#8962; Capacidad del vehiculo" >
+             <input class="input" type="text" id="cilindraje" placeholder="&#8962; Cilindraje" >
+             <input class="input" type="text" id="chasis" placeholder="&#8962; Numero de chasis" >
+             <p>Zona de circulación:</p>
+		   <select id="zona">
+		    <option value="1">Seleccione zona de circulación </option> 	
+			<option value="Antioquia">Antioquia</option>
+			<option value="Bucaramanga">Bucaramanga</option>
+			<option value="Cordoba">Cordoba</option>
+			<option value="Cundinamarca">Cundinamarca</option>
+		    </select>
+             <input class="input" type="text" id="valor" placeholder="&#x1F4B2; Valor asegurado del vehiculo" >
+             <p>Fecha de Vencimiento de seguro:</p> 
+             <input class="input" type="date" id="fecha" placeholder="&#8962; Fecha de vencimiento del  seguro" >
+             <input class="input" type="email" id="email" placeholder="&#9993; Email Propietario" >
+             <input class="input" type="tel" id="tel" placeholder="&#128222; Telefono Propietario" >
+             <input class="input" type="text" id="direccion" placeholder="&#x1F3E0; Dirección propietario" >
+             <div class="btn_form">
+             	<input class="btn_submit" type="submit" value="REGISTRAR">
+             	<input class="btn_reset" type="reset" value="LIMPIAR">
+
+             </div>
+		</form>
+	</div>
+
+    <div id="main-container">
+    		<input type="text" id="termino" name="busqueda" placeholder="Termino a buscar">
+    		<select name="" id="buscar_por" >
+    			<option value="0">Seleccione una opcion</option>
+    			<option value="placa" id="placa">placa</option>
+    			<option value="Anoy" id="ano">Año</option>
+    			
+    		</select>
+    		<input type="submit" id="buscar" value="buscar" onclick="">
+	<table id="Tabla">
+	<thead>
+	<tr>
+	    <th>Placa</th>
+		<th>Color</th>
+		<th>Año</th>
+		<th>Capacidad</th>
+		<th>Cilindraje</th>
+		<th>Chasis</th>
+		<th>Zona de circulacion</th>
+		<th>Valor asegurado</th>
+		<th>Fecha de vencimiento</th>
+		<th>Email</th>
+		<th>Telefono</th>
+		<th>Dirección</th>
+	</tr>
+	</thead>
+	<tbody id="contenido_tabla"></tbody>
+	</table>
+	</div>
+	  <script src="js/validacion.js"></script>
+</body>
+</html>
