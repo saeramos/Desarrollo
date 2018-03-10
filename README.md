@@ -7,5 +7,5 @@ En este proyecto encontraras un formulario en HTML, validar los datos del formul
 
 Autores
 ----------------------
-Sergio Andres Escobar 
+Sergio Andres Escobar, 
 Juan David Martines
