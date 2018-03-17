@@ -16,8 +16,8 @@
 		</div>
 		<form class="form_reg" id="formulario" action="#" onsubmit="return validacion(this);">
 
-             <input class="input" type="text" id="placa" placeholder="Placa">
-             <input class="input" type="text" id="color" placeholder="Color">
+             <input class="input" type="text" id="placa" placeholder="&#x1F697;Placa">
+             <input class="input" type="text" id="color" placeholder="&#x1F697;Color">
              <input class="input" type="text" id="ano" placeholder="&#x1F4C6; Año del modelo" >
              <input class="input" type="text" id="capacidad" placeholder="&#8962; Capacidad del vehiculo" >
              <input class="input" type="text" id="cilindraje" placeholder="&#8962; Cilindraje" >
@@ -43,16 +43,19 @@
              </div>
 		</form>
 	</div>
-
     <div id="main-container">
+    		<form>
     		<input type="text" id="termino" name="busqueda" placeholder="Termino a buscar">
     		<select name="" id="buscar_por" >
-    			<option value="0">Seleccione una opcion</option>
-    			<option value="placa" id="placa">placa</option>
-    			<option value="Anoy" id="ano">Año</option>
+    			<option value="1">Seleccione una opcion</option>
+    			<option value="placa" id="Placa">placa</option>
+    			<option value="an" id="ano">Año</option>
     			
     		</select>
-    		<input type="submit" id="buscar" value="buscar" onclick="">
+    		<input type="submit" id="buscar" value="&#x1F50D; buscar" onclick="return Buscar();">
+    		<input type="button"  value="Mostrar" onclick="mostrar_tabla();">
+    		</form>
+
 	<table id="Tabla">
 	<thead>
 	<tr>
@@ -68,11 +71,14 @@
 		<th>Email</th>
 		<th>Telefono</th>
 		<th>Dirección</th>
+		<th>Modificar</th>
+		<th>Eliminar</th>
 	</tr>
 	</thead>
 	<tbody id="contenido_tabla"></tbody>
 	</table>
 	</div>
 	  <script src="js/validacion.js"></script>
+	  <script src="js/jquery-1.7.1.js"></script>
 </body>
 </html>
