@@ -15,7 +15,7 @@ function validacion(formulario) {
     var Bus       = document.getElementById("termino");
 
 
-	//Validando que no se encuentren vacios
+//Validando que no se encuentren vacios
 	if (Placa.value == null || Placa.value.length == 0 || /^\s+$/.test(Placa.value)) {		  
   	  alert('POR FAVOR DIGITE LA PLACA DEL VEHICULO');
 	  Placa.focus();
@@ -88,7 +88,8 @@ function validacion(formulario) {
 		verificar=false;
 	  return false;	
 	}
-	//Validando campos 	
+	
+//Validando campos 	
 	if(soloLetrasYNum(Placa) == false){	
 		Placa.focus();
 		return false;
@@ -137,12 +138,12 @@ function validacion(formulario) {
 	    document.getElementById("formulario").reset();
 	    
 	    
-	var Buscar = document.getElementById(buscar_por);    
 	
-		mostrar_tabla();
+	mostrar_tabla();
 	
 	return true;
 }
+
 //vector
 var vec=[];
 
@@ -158,55 +159,97 @@ function nuevo(p,color,a,cap,cilin,num,zona,val,fecha,email,tel,direc){
 function mostrar_tabla(){
 	var tabla      = document.getElementById("contenido_tabla");
 	var fila_tabla = "";
-
+	if(vec.length!=0){
 	for(var i = 0; i < vec.length; i++){
 		fila_tabla += "<tr><td>"+ vec[i].placa +"</td><td> "+vec[i].color+"</td><td> "+vec[i].Anyo+"</td><td> "+
 		vec[i].capacidad+"</td><td> "+vec[i].cilindraje+"</td><td>"+vec[i].chasis+"</td><td> "+vec[i].zona+
 		"</td><td> "+vec[i].valor+"</td><td> "+vec[i].fecha+"</td><td> "+vec[i].correo+"</td><td> "+vec[i].tele+
-		"</td><td> "+vec[i].dir+"</td></tr>";
+		"</td><td> "+vec[i].dir+"</td><td><input type='button' id='editar' value='Editar' onclick='Editar("+i+");'></td>"+
+		"<td><input type='button' id='eliminar' value='Eliminar' onclick='Eliminar("+i+");''></td></tr>";
 		tabla.innerHTML = fila_tabla;
 	}
+	}else{
+		fila_tabla ="<tr></tr>"
+		tabla.innerHTML = fila_tabla;
+	}
+
 	
 }
-function buscar(term,select){
-	if(select == "placa"){
+
+//Buscar
+function Buscar(){
+	var term = document.getElementById("termino").value;
+	var select = document.getElementById("buscar_por").value;
+	console.log(term);
+	if(term != ""){
+	 if(select == "placa"){
 		buscar_placa(term);
-	}else{
+	 }else{
 		buscar_(term);
+
+		}
+	}else{
+		alert("Por favor ingrese un termino a buscar.");
 	}
+	return false;
 }
+
+//Buscar por año
 function buscar_(term){
 	var tabla      = document.getElementById("contenido_tabla");
 	var fila_tabla = "";
 
 	for(var i = 0; i < vec.length; i++){
-		if(term==vec[i].placa){
-		fila_tabla = "<tr><td>"+ vec[i].placa +"</td><td> "+vec[i].color+"</td><td> "+vec[i].Anyo+"</td><td> "+
+		if(term===vec[i].Anyo){
+			fila_tabla = "<tr><td>"+ vec[i].placa +"</td><td> "+vec[i].color+"</td><td> "+vec[i].Anyo+"</td><td> "+
 		vec[i].capacidad+"</td><td> "+vec[i].cilindraje+"</td><td>"+vec[i].chasis+"</td><td> "+vec[i].zona+
 		"</td><td> "+vec[i].valor+"</td><td> "+vec[i].fecha+"</td><td> "+vec[i].correo+"</td><td> "+vec[i].tele+
-		"</td><td> "+vec[i].dir+"</td></tr>";
+		"</td><td> "+vec[i].dir+"</td></td><td><input type='button' id='editar' value='Editar' onclick='Editar("+i+");'></td>"+
+		"<td><input type='button' id='eliminar' value='Eliminar' onclick='Eliminar("+i+");''></td></tr>";
 		tabla.innerHTML = fila_tabla;
 		}else{
-
+			fila_tabla = "<tr></tr>";
+		tabla.innerHTML = fila_tabla;
 		}
 	}
 }
+
+//Buscar por placa
 function buscar_placa(term){
 	var tabla      = document.getElementById("contenido_tabla");
 	var fila_tabla = "";
 
 	for(var i = 0; i < vec.length; i++){
-		if(term==vec[i].placa){
+		if(term===vec[i].placa){
 		fila_tabla = "<tr><td>"+ vec[i].placa +"</td><td> "+vec[i].color+"</td><td> "+vec[i].Anyo+"</td><td> "+
 		vec[i].capacidad+"</td><td> "+vec[i].cilindraje+"</td><td>"+vec[i].chasis+"</td><td> "+vec[i].zona+
 		"</td><td> "+vec[i].valor+"</td><td> "+vec[i].fecha+"</td><td> "+vec[i].correo+"</td><td> "+vec[i].tele+
-		"</td><td> "+vec[i].dir+"</td></tr>";
+		"</td><td> "+vec[i].dir+"</td><td><input type='button' id='editar' value='Editar' onclick='Editar("+i+");'></td>"+
+		"<td><input type='button' id='eliminar' value='Eliminar' onclick='Eliminar("+i+");''></td></tr>";
 		tabla.innerHTML = fila_tabla;
 		}else{
+			fila_tabla = "<tr></tr>";
+		tabla.innerHTML = fila_tabla;
 
 		}
 	}
 }
+//Editar
+function Editar(pos){
+
+}
+
+//Eliminar
+function Eliminar(pos){
+	for(var z=0;z<vec.length;z++){
+		if(z===pos){
+			vec.splice(z,1);
+		}
+	}
+	mostrar_tabla();
+}
+
+
 //Validar que sea alfanumerico
 function soloLetrasYNum(campo) {
 	var validos = " abcdefghijklmnopqrstuvwxyz0123456789";
