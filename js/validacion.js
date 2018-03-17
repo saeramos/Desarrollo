@@ -178,16 +178,20 @@ function mostrar_tabla(){
 
 //Buscar
 function Buscar(){
-	var term = document.getElementById("termino").value;
+	var term = document.getElementById("termino");
 	var select = document.getElementById("buscar_por").value;
 	console.log(term);
-	if(term != ""){
+	if(term.value != ""){
+	 if(select!= "1"){
 	 if(select == "placa"){
-		buscar_placa(term);
+		buscar_placa(term.value);
 	 }else{
-		buscar_(term);
+		buscar_(term.value);
 
 		}
+	}else{
+		alert("selecciona una opcion por favor");
+	}
 	}else{
 		alert("Por favor ingrese un termino a buscar.");
 	}
