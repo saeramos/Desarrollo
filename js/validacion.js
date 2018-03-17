@@ -242,7 +242,7 @@ function buscar_placa(term){
 }
 //Editar
 function Editar(pos){
-
+	
 }
 
 //Eliminar
