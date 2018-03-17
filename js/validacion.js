@@ -179,10 +179,10 @@ function mostrar_tabla(){
 //Buscar
 function Buscar(){
 	var term = document.getElementById("termino");
-	var select = document.getElementById("buscar_por").value;
+	var select = document.getElementById("buscar_por");
 	console.log(term);
 	if(term.value != ""){
-	 if(select.value != "1"){
+	if(select.value != "1"){
 	 if(select.value == "placa"){
 		buscar_placa(term.value);
 	 }else{
