@@ -242,7 +242,12 @@ function buscar_placa(term){
 }
 //Editar
 function Editar(pos){
-	
+
+	Placa.innerHTML      = vec[pos].placa;
+	Color.innerHTML      = vec[pos].color;
+	Ano.innerHTML        = vec[pos].Anyo;
+	Capacidad.innerHTML  = vec[pos].capacidad;
+	Cilindraje.innerHTML = vec[pos].cilindraje;
 }
 
 //Eliminar
