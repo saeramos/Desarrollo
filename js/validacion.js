@@ -182,8 +182,8 @@ function Buscar(){
 	var select = document.getElementById("buscar_por").value;
 	console.log(term);
 	if(term.value != ""){
-	 if(select!= "1"){
-	 if(select == "placa"){
+	 if(select.value != "1"){
+	 if(select.value == "placa"){
 		buscar_placa(term.value);
 	 }else{
 		buscar_(term.value);
@@ -191,9 +191,11 @@ function Buscar(){
 		}
 	}else{
 		alert("selecciona una opcion por favor");
+		select.focus();
 	}
 	}else{
 		alert("Por favor ingrese un termino a buscar.");
+		term.focus();
 	}
 	return false;
 }
