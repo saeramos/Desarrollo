@@ -1,6 +1,4 @@
-function validacion(formulario) {
-
-	var Placa     = document.getElementById("placa");
+    var Placa     = document.getElementById("placa");
     var Color     = document.getElementById("color");
     var Ano       = document.getElementById("ano");
     var Capacidad = document.getElementById("capacidad");
@@ -13,6 +11,10 @@ function validacion(formulario) {
     var Tel       = document.getElementById("tel");
     var Direccion = document.getElementById("direccion");
     var Bus       = document.getElementById("termino");
+
+function validacion(formulario) {
+
+	
 
 
 //Validando que no se encuentren vacios
@@ -242,7 +244,6 @@ function buscar_placa(term){
 }
 //Editar
 function Editar(pos){
-
 	Placa.innerHTML      = vec[pos].placa;
 	Color.innerHTML      = vec[pos].color;
 	Ano.innerHTML        = vec[pos].Anyo;
