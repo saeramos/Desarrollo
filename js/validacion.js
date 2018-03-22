@@ -1,4 +1,7 @@
-    var Placa     = document.getElementById("placa");
+ 
+
+function validacion(formulario) {
+   var Placa     = document.getElementById("placa");
     var Color     = document.getElementById("color");
     var Ano       = document.getElementById("ano");
     var Capacidad = document.getElementById("capacidad");
@@ -11,9 +14,6 @@
     var Tel       = document.getElementById("tel");
     var Direccion = document.getElementById("direccion");
     var Bus       = document.getElementById("termino");
-
-function validacion(formulario) {
-
 
 //Validando que no se encuentren vacios
 	if (Placa.value == null || Placa.value.length == 0 || /^\s+$/.test(Placa.value)) {		  
@@ -242,12 +242,35 @@ function buscar_placa(term){
 }
 //Editar
 function Editar(pos){
-
-	Placa.innerHTML      = vec[pos].placa;
-	Color.innerHTML      = vec[pos].color;
-	Ano.innerHTML        = vec[pos].Anyo;
-	Capacidad.innerHTML  = vec[pos].capacidad;
-	Cilindraje.innerHTML = vec[pos].cilindraje;
+	var Placa     = document.getElementById("placa");
+    var Color     = document.getElementById("color");
+    var Ano       = document.getElementById("ano");
+    var Capacidad = document.getElementById("capacidad");
+    var Cilindraje= document.getElementById("cilindraje");
+    var Chasis    = document.getElementById("chasis");
+    var Zona      = document.getElementById("zona");
+    var Valor     = document.getElementById("valor");
+    var Fecha     = document.getElementById("fecha");
+    var Email     = document.getElementById("email");
+    var Tel       = document.getElementById("tel");
+    var Direccion = document.getElementById("direccion");
+    var Bus       = document.getElementById("termino");
+    var Boton      = document.getElementById("btn");
+    
+	Placa.value      = vec[pos].placa;
+	console.log(vec[pos].placa);
+	Color.value      = vec[pos].color;
+	Ano.value        = vec[pos].Anyo;
+	Capacidad.value  = vec[pos].capacidad;
+	Cilindraje.value = vec[pos].cilindraje;
+	Chasis.value 	 = vec[pos].chasis;
+	Zona.value   	 = vec[pos].zona;
+	Valor.value  	 = vec[pos].valor;
+	Fecha.value      = vec[pos].fecha;
+	Email.value      = vec[pos].correo;
+	Tel.value	     = vec[pos].tele;
+	Direccion.value  = vec[pos].dir;
+	Boton.value      = "Editar";
 }
 
 //Eliminar
