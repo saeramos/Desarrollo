@@ -258,7 +258,6 @@ function Editar(pos){
     var Boton      = document.getElementById("btn");
     
 	Placa.value      = vec[pos].placa;
-	console.log(vec[pos].placa);
 	Color.value      = vec[pos].color;
 	Ano.value        = vec[pos].Anyo;
 	Capacidad.value  = vec[pos].capacidad;
