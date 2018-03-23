@@ -1,7 +1,7 @@
  
 
 function validacion(formulario) {
-   var Placa     = document.getElementById("placa");
+    var Placa     = document.getElementById("placa");
     var Color     = document.getElementById("color");
     var Ano       = document.getElementById("ano");
     var Capacidad = document.getElementById("capacidad");
@@ -13,7 +13,6 @@ function validacion(formulario) {
     var Email     = document.getElementById("email");
     var Tel       = document.getElementById("tel");
     var Direccion = document.getElementById("direccion");
-    var Bus       = document.getElementById("termino");
 
 //Validando que no se encuentren vacios
 	if (Placa.value == null || Placa.value.length == 0 || /^\s+$/.test(Placa.value)) {		  
@@ -241,6 +240,8 @@ function buscar_placa(term){
 	}
 }
 //Editar
+	
+
 function Editar(pos){
 	var Placa     = document.getElementById("placa");
     var Color     = document.getElementById("color");
@@ -254,9 +255,9 @@ function Editar(pos){
     var Email     = document.getElementById("email");
     var Tel       = document.getElementById("tel");
     var Direccion = document.getElementById("direccion");
-    var Bus       = document.getElementById("termino");
-    var Boton      = document.getElementById("btn");
-    
+
+    document.getElementById("btn").hidden = true;
+    document.getElementById("btn_editar").hidden = false;
 	Placa.value      = vec[pos].placa;
 	Color.value      = vec[pos].color;
 	Ano.value        = vec[pos].Anyo;
@@ -269,7 +270,40 @@ function Editar(pos){
 	Email.value      = vec[pos].correo;
 	Tel.value	     = vec[pos].tele;
 	Direccion.value  = vec[pos].dir;
-	Boton.value      = "Editar";
+}
+function Editar_val(formulario){
+	var Placa     = document.getElementById("placa");
+    var Color     = document.getElementById("color");
+    var Ano       = document.getElementById("ano");
+    var Capacidad = document.getElementById("capacidad");
+    var Cilindraje= document.getElementById("cilindraje");
+    var Chasis    = document.getElementById("chasis");
+    var Zona      = document.getElementById("zona");
+    var Valor     = document.getElementById("valor");
+    var Fecha     = document.getElementById("fecha");
+    var Email     = document.getElementById("email");
+    var Tel       = document.getElementById("tel");
+    var Direccion = document.getElementById("direccion");
+   
+
+	for(var i=0; i<vec.length;i++){
+		if(Placa.value === vec[i].placa){
+			vec[i].placa   	    = Placa.value;
+			vec[i].color 	    = Color.value;
+			vec[i].Anyo  	    = Ano.value ;
+		    vec[i].capacidad  = Capacidad.value;
+	        vec[i].cilindraje = Cilindraje.value;
+		    vec[i].chasis	    = Chasis.value;
+			vec[i].zona   	= Zona.value;
+	        vec[i].valor  	= Valor.value;
+	        vec[i].fecha 		= Fecha.value;
+		    vec[i].correo     = Email.value;
+	     	vec[i].tele       = Tel.value ;
+	        vec[i].dir        = Direccion.value; 
+		}
+	}
+	console.log(Placa.value);
+	mostrar_tabla();
 }
 
 //Eliminar
