@@ -239,9 +239,7 @@ function buscar_placa(term){
 		}
 	}
 }
-//Editar
-	
-
+//Envia los valores al formulario para editar
 function Editar(pos){
     var Placa     = document.getElementById("placa");
     var Color     = document.getElementById("color");
@@ -271,6 +269,8 @@ function Editar(pos){
 	Tel.value	     = vec[pos].tele;
 	Direccion.value  = vec[pos].dir;
 }
+
+//Editar Vector
 function Editar_val(formulario){
     var Placa     = document.getElementById("placa");
     var Color     = document.getElementById("color");
@@ -339,4 +339,3 @@ function numeric(campo){
           }
 
 }
-
