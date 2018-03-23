@@ -303,6 +303,9 @@ function Editar_val(formulario){
 		}
 	}
 	
+	document.getElementById("btn").hidden = false;
+    document.getElementById("btn_editar").hidden = true;
+    document.getElementById("formulario").reset();
 	mostrar_tabla();
 }
 
