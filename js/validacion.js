@@ -302,7 +302,7 @@ function Editar_val(formulario){
 	        vec[i].dir        = Direccion.value; 
 		}
 	}
-	console.log(Placa.value);
+	
 	mostrar_tabla();
 }
 
