@@ -38,6 +38,7 @@
              <input class="input" type="text" id="direccion" placeholder="&#x1F3E0; Dirección propietario" >
              <div class="btn_form">
              	<input class="btn_submit" type="submit" id="btn" value="REGISTRAR">
+             	<input type="submit" class="btn_submit" id="btn_editar" value="Edita" hidden>
              	<input class="btn_reset" type="reset" value="LIMPIAR">
 
              </div>
@@ -48,8 +49,8 @@
     		<input type="text" id="termino" name="busqueda" placeholder="Termino a buscar">
     		<select id="buscar_por" >
     			<option value="1">Seleccione una opcion</option>
-    			<option value="placa" id="Placa">placa</option>
-    			<option value="an" id="ano">Año</option>
+    			<option value="placa">placa</option>
+    			<option value="Anyo">Año</option>
     			
     		</select>
     		<input type="submit" id="buscar" value="&#x1F50D; buscar" onclick="return Buscar();">
