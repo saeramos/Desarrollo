@@ -243,7 +243,7 @@ function buscar_placa(term){
 	
 
 function Editar(pos){
-	var Placa     = document.getElementById("placa");
+    var Placa     = document.getElementById("placa");
     var Color     = document.getElementById("color");
     var Ano       = document.getElementById("ano");
     var Capacidad = document.getElementById("capacidad");
@@ -272,7 +272,7 @@ function Editar(pos){
 	Direccion.value  = vec[pos].dir;
 }
 function Editar_val(formulario){
-	var Placa     = document.getElementById("placa");
+    var Placa     = document.getElementById("placa");
     var Color     = document.getElementById("color");
     var Ano       = document.getElementById("ano");
     var Capacidad = document.getElementById("capacidad");
@@ -288,18 +288,18 @@ function Editar_val(formulario){
 
 	for(var i=0; i<vec.length;i++){
 		if(Placa.value === vec[i].placa){
-			vec[i].placa   	    = Placa.value;
-			vec[i].color 	    = Color.value;
-			vec[i].Anyo  	    = Ano.value ;
-		    vec[i].capacidad  = Capacidad.value;
-	        vec[i].cilindraje = Cilindraje.value;
-		    vec[i].chasis	    = Chasis.value;
-			vec[i].zona   	= Zona.value;
-	        vec[i].valor  	= Valor.value;
-	        vec[i].fecha 		= Fecha.value;
-		    vec[i].correo     = Email.value;
-	     	vec[i].tele       = Tel.value ;
-	        vec[i].dir        = Direccion.value; 
+		vec[i].placa   	    = Placa.value;
+		vec[i].color 	    = Color.value;
+		vec[i].Anyo  	    = Ano.value ;
+		vec[i].capacidad    = Capacidad.value;
+	        vec[i].cilindraje   = Cilindraje.value;
+		vec[i].chasis	    = Chasis.value;
+		vec[i].zona   	    = Zona.value;
+	        vec[i].valor  	    = Valor.value;
+	        vec[i].fecha 	    = Fecha.value;
+		vec[i].correo       = Email.value;
+	     	vec[i].tele         = Tel.value ;
+	        vec[i].dir          = Direccion.value; 
 		}
 	}
 	
